@@ -127,7 +127,7 @@ The data frame contains 84 rows and 5 columns, with 7 measurements recorded for 
 Quebec <- subset(CO2, Type == "Quebec")
 summary(Quebec$uptake)
 ```
-Answer:
+
 |Median|Mean|
 |-|-|
 |37.15|33.54|
@@ -138,8 +138,6 @@ The average CO2 uptake of the plants from Quebec is 33.54, while the median is 3
 Mississippi <- subset(CO2, Type == "Mississippi")
 summary(Mississippi$uptake)
 ```
-
-Answer:
 |Median|Mean|
 |-|-|
 |19.30|20.88|
@@ -153,23 +151,16 @@ library(airway)
 data(airway)
 help(airway)
 counts_mat <- assay(airway)
-```
-#### Genes expressed in each sample
 
-```r
 colSums(counts_mat > 0)
+sum(rowSums(counts_mat) == 0)
 ```
-Answer:
+Genes expressed in all samples:
 |SRR1039508|SRR1039509|SRR1039512|SRR1039513|SRR1039516|SRR1039517|SRR1039520|SRR1039521|
 |-|-|-|-|-|-|-|-|
 |24633|24527|25699|23124|25508|25998|24662|23991|
 
-
-#### Genes not expressed in any sample
-```r
-sum(rowSums(counts_mat) == 0)
-```
-Answer: 30208
+Genes not expressed in any sample: 30208
 
 ---
 ## Task 6 - R Functions
@@ -177,20 +168,18 @@ Answer: 30208
 ### 1. Write a function that calculates the ratio of the mean and the median of a given vector.
 
 ```r
-ratio_mean_median <- function(vector) { 
-  return (mean(vector)/median(vector))
+task_6_1 <- function(x) {
+  mean(x) / median(x)
 }
 ```
-This function calculates the mean divided by the median, or the ratio of the mean and the median. 
-
 
 ---
 ### 2. Write a function that ignores the lowest and the highest value from a given vector and calculate the mean.
 
 ```r
-trimmed_mean <- function(vector) { 
-  sort_vector <- sort(vector)
-  return (mean(sort_vector[2:(length(sort_vector) -1)]))
+task_6_2 <- function(x) {
+  x_sorted <- sort(x)
+  mean(x_sorted[-c(1, length(x_sorted))])
 }
 ```
 This functions sorts the vector, and then calculates the mean based on indices 2 and up to the second largest value. 
