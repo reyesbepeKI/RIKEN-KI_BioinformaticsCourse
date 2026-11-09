@@ -107,24 +107,19 @@ data(CO2)
 help(CO2)
 ```
 
-The dataset shows the data from an experiment on the cold tolerance of the grass species Echinocloa crus-galli.
-The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient 
-CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted.
+This dataset comes from an experiment on the cold tolerance of the grass species *Echinochloa crus-galli*. Researchers measured the CO2 uptake of twelve plants, six from Quebec and six from Mississippi, across a range of ambient CO2 concentrations. For each origin, half of the plants were chilled overnight before the measurements began.
 
-The dataframe has 84 rows and 5 columns.
-There are 7 measurements for every plant. 
-In the column plant we see the plant ID:
-  - Qn1:3 (Quebec nonchilled plant 1 to 3)
-  - Qc1:3 (Quebec chilled plant 1 to 3)
-  - Mn1:3 (Mississippi nonchilled plant 1 to 3)
-  - Mc1:3 (Mississippi chilled plant 1 to 3)
+The data frame contains 84 rows and 5 columns, with 7 measurements recorded for each plant. The columns are:
 
-In the column Type we see levels Quebec and Mississippi, telling us the origin of the plant.
-In the column Treatment we see levels nonchilled and chilled
-In the column conc we see numeric values of ambient carbon dioxide concentrations (mL/L).
-  - The values are systematically ordered - for every plant there are the values 95, 175, 250, 350, 500, 675 and 1000.
-
-In the column uptake we see numeric values of carbon dioxide uptake rates (μmol/m^2sec).
+* **Plant:** the plant ID, which encodes origin, treatment, and plant number:
+  - Qn1-Qn3: Quebec, nonchilled, plants 1 to 3
+  - Qc1-Qc3: Quebec, chilled, plants 1 to 3
+  - Mn1-Mn3: Mississippi, nonchilled, plants 1 to 3
+  - Mc1-Mc3: Mississippi, chilled, plants 1 to 3
+* **Type:** the plant's place of origin, either Quebec or Mississippi.
+* **Treatment:** whether the plant was chilled or nonchilled.
+* **conc:** the ambient CO2 concentration in mL/L. Every plant was measured at the same seven levels: 95, 175, 250, 350, 500, 675, and 1000.
+* **uptake:** the CO2 uptake rate in μmol/m²·sec.
 
 ---
 ### 3. What is the average and median CO2 uptake of the plants from Quebec and Mississippi?
