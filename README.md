@@ -28,30 +28,22 @@ The study compared 23 women with obesity (OB) before and 2 years after gastric b
 
 #### a. List and explain at least three questions/ hypotheses you can think of that extend the analysis presented in the paper.
 
-- How does short-term hyperinsulinemia affect WAT function downstream of insulin in the non-obese state?
-- Is the obesity-related weakened insulin response associated with adipose tissue inflammation?
-- Does adipose tissue insulin responsiveness predict future risk of type 2 diabetes?
-
-#### b. [Optional] Devise a computational analysis strategy for (some of) the listed questions under 3a.
-
-This assignment is optional, and I did unfortunately not have time to do it. 
+* Do the transcriptional changes translate into protein and signaling changes?
+Most TF genes were not themselves insulin-regulated, so the TFBS signals (SREBP, LXR, and others) probably reflect post-transcriptional events. Hypothesis: in obesity, proximal Akt signaling is partly blunted, but mTORC1/SREBP signaling is preserved. Phosphoproteomics and proteomics of paired biopsies could test this, and would show where along the pathway the split occurs.
+* Does the ribosomal protein downregulation affect translation?
+Hypothesis: insulin-driven downregulation of RNP genes (via ETS/GABPA/YY1) selectively changes translation of specific mRNAs, and this is lost in obesity. Ribosome profiling (Ribo-seq) or polysome profiling on paired biopsies could test it.
+* Does the selective resistance depend on cell type, and is it intrinsic to adipocytes?
+Bulk WAT mixes adipocytes, stromal/vascular cells, endothelial cells and immune cells. Hypothesis: the lost remodeling/angiogenesis response is mainly endothelial or stromal, while lipogenic genes are adipocyte-driven. Single-nucleus RNA-seq of fasting and clamp biopsies, or isolated adipocytes versus stromal fractions, could resolve this. Cell composition changes, such as fewer macrophages after weight loss, could also confound the bulk results.
 
 ---
 ## Task 2 - Git repositories and R Markdown
 
-- I have made an account on Github, started a repository and a new project in that repository.
-- All the documentation for Assignment 1 is in this formatted text document.
-- During week 2 I will add all my hand-on work as R Markdown documents in the same repository.
+Done! 
 
 ---
 ## Task 3 - Introduction to R and online R course
 
-- I have installed the latest version of R software (4.6.1).
-- I had already prior to this course installed the most recent verison of RStudio Desktop (2026.10.0+233).
-- I have installed the latest version of the Bioconductor package.
-- I am very familiar with Tidyverse and ggplot2 since before this course - I will access them when necessary.
-- I have used R many times before, as well as have some experience with R Markdown, but when I get uncertain about something I will look into the optional course as well as the R manuals and the R Markdown cheatsheet. 
-
+Done!
 
 ---
 ## Task 4 - R basic operations
@@ -60,14 +52,14 @@ This assignment is optional, and I did unfortunately not have time to do it.
 ```r
 10^(1/2)
 ```
-Answer: 3.162278
+Result: 3.16
 
 ---
 ### 2. What is the logarithm of 32 to the base 2?
 ```r
 log2(32)
 ```
-Answer: 5
+Result: 5
 
 ---
 ### 3. What is the sum of the numbers from 1 to 1000?
@@ -75,14 +67,14 @@ Answer: 5
 ```r
 sum(1:1000)
 ```
-Answer: 500500
+Result: 500500
 
 ---
 ### 4. What is the sum of all even numbers from 2 to 1000?
 ```r
 sum(seq(2, 1000, by = 2))
 ```
-Answer: 250500
+Result: 250500
 
 ---
 ### 5. How many pairwise comparisons are there for 100 genes?
@@ -90,7 +82,7 @@ Answer: 250500
 n <- 100
 choose(n, 2)
 ```
-Answer: 4950
+Result: 4950
 
 ---
 ### 6. And how many ways to arrange 100 genes in triples?
@@ -98,7 +90,7 @@ Answer: 4950
 n <- 100
 choose(n, 3)
 ```
-Answer: 161700
+Result: 161700
 
 ---
 ## Task 5 - Using R example datasets
